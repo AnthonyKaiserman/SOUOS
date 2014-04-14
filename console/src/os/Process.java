@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import programs.Program;
 
 //Class to represent a process.
-class Process
+public class Process
 { 
 	public static final int RUNNING    = 0;
 	public static final int WAIT       = 1;
@@ -34,6 +34,7 @@ class Process
 		this.args=args;
 		this.priority=priority;
 		this.id=id;
+		this.status=2;
 	}
 	public String run(PrintWriter out) 
 	       throws InstantiationException, IllegalAccessException
@@ -64,7 +65,7 @@ class Process
 		return priority;
 	}
 	public String getName(){
-		return args[0];
+		return Character.toUpperCase(args[0].charAt(0))+args[0].substring(1);
 	}
 	public String[] getArgs()
 	{
@@ -97,7 +98,15 @@ class Process
 	}
 	public String toString()
 	{
-		return getName() + "/t" + getId() + "/t" + getStatus() + 
-			   "/t"+getRunTime()+"/t" + getPriority() + "/t" + getArgs();
+		String s= getName() + "\t" + getId() + "\t" + getStatus() + 
+			   "\t"+getRunTime()+"\t" + getPriority() + "\t\t";
+		String[] a = new String[args.length - 1];
+		System.arraycopy(args, 1, a, 0, a.length);
+		for(int i=0;i<a.length;i++)
+		{
+			s=s+a[i]+" ";
+		}
+		
+		return s;
 	}
 }

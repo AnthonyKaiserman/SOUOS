@@ -10,8 +10,11 @@ public abstract class CliCommand
 	protected static Process     process = null;
 	protected static PrintWriter   trace = null;
 	protected static String       prompt = "--->>";
+	protected static String		msg = null;
 	
-	public static void outLog(String data){
+	public static String outLog()
+	{
+		return msg;
 //		BatchOS.outLog(data, true);
 	}
 	
@@ -19,7 +22,7 @@ public abstract class CliCommand
 		if (trace != null) trace.println(data);
 	}
 	
-	public void execute(String[] args){
+	public void execute(String[] args) throws Throwable{
 		
 	}
 	

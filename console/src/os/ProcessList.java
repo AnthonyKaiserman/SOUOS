@@ -25,8 +25,8 @@ public class ProcessList
 	}
 	public String toString()
 	{
-		String s=	"Current batch queue/n"+
-					"Name/tID/tStatus/tRunTime/tPriority/tArguments/n";
+		String s=	"Current batch queue\n"+
+					"Name\t\tID\tStatus\tRunTime\tPriority\tArguments\n";
 		
 		Process p=this.head;
 		if(p==null)
@@ -35,7 +35,8 @@ public class ProcessList
 		}
 		while(p!=null)
 		{
-			s=s+p.toString()+"/n";
+			s=s+p.toString()+"\n";
+			p=p.next;
 		}
 		
 		return s;
@@ -52,9 +53,15 @@ public class ProcessList
 	}
 	public void enQueue(Process p)  // Add process to the tail.
 	{
-		tail.next=p;
-		p.previous=tail;
-		tail=p;
+		if(isEmpty())
+		{
+			head=tail=p;
+		}
+		else{
+			tail.next=p;
+			p.previous=tail;
+			tail=p;
+		}
 	}
 	public Process deQueue()        // Remove from the head.
 	{
