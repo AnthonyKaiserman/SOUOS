@@ -23,13 +23,13 @@ public class ProcessList
 	public String toString()
 	{
 		String s="Current batch queue\n"+
-				 "Name\tID\tStatus\tRunTime\tPriority\tArguments\n";
+				 "Name\t\tID\tStatus\tRunTime\tPriority Arguments\n";
 	
 		Process p = peek();
 		if(p == null)
 			return s;
 		while(p!=null){
-			s = s + p.toString()+"\n";
+			s = s + p.toString() + "\n";
 			p = p.next;
 		}
 		return s;	

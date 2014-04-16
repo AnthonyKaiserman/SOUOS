@@ -17,8 +17,8 @@ public class Add extends CliCommand
 			process = new Process(arg, process.IDLE, pid);
 			runList.enQueue(process);
 		}else
-			return "ERROR: Batch not created!/n";
-		return "process " + process.getName() + " added to batch./n";
+			return "ERROR: Batch not created!\n";
+		return "process " + process.getName() + " added to batch.\n";
 	}
 
 }

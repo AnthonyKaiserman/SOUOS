@@ -50,7 +50,7 @@ public class Process
 		}catch(Throwable thrown)
 		{
 			status = 4;
-			return ("java.classNotFoundException for " + getName());
+			return ("java.ClassNotFoundException for " + getName());
 		}
 		return getName() +" ran successfully time = "+ (endTime - startTime) + " milliseconds\n";
 	}
@@ -66,7 +66,7 @@ public class Process
 	}
 	public String getName(){
 		
-		return this.args[0] = Character.toUpperCase(this.args[0].charAt(0)) + this.args[0].substring(1);
+		return args[0] = Character.toUpperCase(args[0].charAt(0)) + args[0].substring(1);
 	}
 	public String[] getArgs(String[] args)
 	{
@@ -100,6 +100,6 @@ public class Process
 	public String toString()
 	{
 		return getName() + "\t" + getId() + "\t" + getStatus() + 
-	   "\t"+getRunTime()+"\t" + getPriority() + "\t" + Arrays.toString(getArgs(this.args));
+	   "\t"+getRunTime()+"\t" + getPriority() + "\t " + Arrays.toString(getArgs(this.args));
 	}
 }

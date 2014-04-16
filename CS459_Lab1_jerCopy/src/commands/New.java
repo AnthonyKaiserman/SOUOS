@@ -10,6 +10,6 @@ public class New extends CliCommand{
 	@Override
 	public String execute(String[] args){
 		runList = new ProcessList();
-		return "New batch created.";
+		return "new batch created.";
 	}
 }

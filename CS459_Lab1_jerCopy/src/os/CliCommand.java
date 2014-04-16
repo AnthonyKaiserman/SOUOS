@@ -20,9 +20,6 @@ public abstract class CliCommand
 		if (trace != null) trace.println(data);
 	}
 	
-	public String execute(String[] args)
-		   throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException{
-		return "";
-	}
-	
+	public abstract String execute(String[] args)
+		   throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException;
 }
