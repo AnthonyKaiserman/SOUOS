@@ -1,13 +1,9 @@
 package commands;
-
 import os.CliCommand;
 
-public class Queue extends CliCommand {
-
-	@Override
-	public void execute(String[] args) throws Throwable
-	{
-		msg=runList.toString();
+public class Queue extends CliCommand{
+	public Queue(){}
+	public String execute(String[] args){
+		return runList.toString();
 	}
-	
 }

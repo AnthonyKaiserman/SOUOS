@@ -4,16 +4,12 @@ import os.CliCommand;
 import os.ProcessList;
 
 public class New extends CliCommand{
-	
-	@Override
-	public void execute(String[] args)  throws Throwable
-	{
-		runList = new ProcessList();
-		msg="New batch initialized";
+	public New(){
+		//create a ProcessList or queue	 
 	}
-	
-	//public String toString()
-	//{
-		//return "New batch initialized";
-	//}
+	@Override
+	public String execute(String[] args){
+		runList = new ProcessList();
+		return "new batch created.";
+	}
 }

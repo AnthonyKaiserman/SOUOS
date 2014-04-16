@@ -4,15 +4,15 @@ import java.io.PrintWriter;
 
 public class Primes extends Program
 { 
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public Primes() { super("Find Prime Numbers"); }
 	public int run(PrintWriter out, String[] args)
 	{ 
 	   int maxNumber = Integer.parseInt(args[1]);
 	   if (maxNumber<1) return(ILLEGAL_PARAMETER);
-	
+
 	   out.println(args[0]+ ": First " + maxNumber + " prime numbers");
 	   if (maxNumber>=1) out.println(1);
 	   if (maxNumber>=2) out.println(3);
@@ -65,5 +65,5 @@ public class Primes extends Program
 	   }
 	   return SUCCESS;
 	}	
-	
+
 }

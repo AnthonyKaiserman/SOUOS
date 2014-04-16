@@ -1,5 +1,6 @@
 package os;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public abstract class CliCommand 
@@ -10,11 +11,8 @@ public abstract class CliCommand
 	protected static Process     process = null;
 	protected static PrintWriter   trace = null;
 	protected static String       prompt = "--->>";
-	protected static String		msg = null;
 	
-	public static String outLog()
-	{
-		return msg;
+	public static void outLog(String data){
 //		BatchOS.outLog(data, true);
 	}
 	
@@ -22,8 +20,6 @@ public abstract class CliCommand
 		if (trace != null) trace.println(data);
 	}
 	
-	public void execute(String[] args) throws Throwable{
-		
-	}
-	
+	public abstract String execute(String[] args)
+		   throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException;
 }
